@@ -498,7 +498,8 @@
                                         <exclude>org.apache.hbase:hbase</exclude>
 
                                         <!-- mapreduce -->
-                                        <exclude>org.apache.hadoop:hadoop-core:(,2.6.0-mr1-cdh5.4.7)</exclude>
+                                        <!-- Completely disallow hadoop-core: It brings in deps that break jobs submitted to a real cluster -->
+                                        <exclude>org.apache.hadoop:hadoop-core</exclude>
                                         <exclude>org.apache.hadoop:hadoop-test:(,2.6.0-mr1-cdh5.4.7)</exclude>
                                         <exclude>org.apache.hadoop:hadoop-minicluster:(,2.6.0-mr1-cdh5.4.7)</exclude>
                                         <exclude>org.apache.hadoop:hadoop-tools:(,2.6.0-mr1-cdh5.4.7)</exclude>
